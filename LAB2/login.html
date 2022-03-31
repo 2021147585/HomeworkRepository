@@ -5,13 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
     <div>
-        <center id="title">Explore what our shop can offer</center>
+        <p id="title">Explore everything.<br></p>
+        <p id="subtext">Login | 
+            <a href = "signup.html" style="text-decoration:none;" class="hlink">Sign Up</a>
+        </p>
     </div>
-    <hr>
-    
+    <hr style="width:50%;border-width:1px;color:gray;background-color:gray;">
+
+    <!--to use: autofocus, placeholder, required, pattern, step-->
+    <div id="maindiv">
+        <form>
+            <!--ID-->
+            <label for="Id"><br><br><br>ID:<br></label>
+            <input class="textbox" type="text" id="Id" name="Id" required autofocus>
+
+            <!--Password-->
+            <label for="Password"><br><br><br>Password:<br></label>
+            <input class="textbox" type="password" id="Password" name="Password" required>
+
+            <!--submit-->
+            <br>
+            <input id="submit" type="submit" value="Log in">
+        
+            <!--reset-->
+            <input id="reset" type="reset" value="Reset">            
+        </form>
+    </div> 
 </body>
 </html>

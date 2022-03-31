@@ -1,24 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url(//db.onlinewebfonts.com/c/0a6ee448d1bd65c56f6cf256a7c6f20a?family=Bahnschrift);
+
+/* to use: 
+background-color
+text-align
+margin
+border
+font-size
+color
+width
+height */
+
+body {
+    background-color: #EEEDDE;
+}
+
+p, 
+div,
+label,
+input {
+    text-align: center;
+    font-family: 'Bahnschrift', sans-serif;
+    color: #141E27;
+}
+
+label {
+    font-size: 23px;
+    line-height: 0px;
+}
+
+.textbox {
+    border: 0;
+    border-bottom: 2px solid gray;
+    background: transparent;
+    width: 400px;
+    font-size: 25px;
+    text-align: center;
+}
+
+::placeholder{
+    opacity: 0.3;
+}
 
 .buttons{
     padding: 10px 40px
 }
 
-div { 
+.hlink{
+    font-weight: bolder;
+    color: #203239;
+}
+
+#head { 
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 5px;
 }
 
 #title{
-    font-family: 'Ubuntu', sans-serif;
     font-size: 80px;
-    color: grey;
+}
+
+#subtext{
+    font-size: 30px;
+}
+
+#maindiv{
+    border-radius: 30px;
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(224, 221, 170, 0.2)
 }
 
 #submit { 
-    color: blue;
+    font-size: 23px;
+    margin-top: 50px;
+    color: rgb(0, 7, 141);
+    border: 5px;
 }
 
 #reset {
-    color: red;
+    font-size: 23px;
+    color: rgb(117, 0, 0);
+    border: 5px
 }
