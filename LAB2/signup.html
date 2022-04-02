@@ -17,7 +17,7 @@
     <hr style="width:50%;border-width:1px;color:gray;background-color:gray;">
 
     <div id="maindiv">
-        <form>
+        <form method="get">
             <!--Email-->
             <label for="Email"><br><br>Email Address:<br></label>
             <input class="textbox" type="text" id="Email" name="Email" placeholder="someone@site.com" required autofocus pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
@@ -28,7 +28,7 @@
         
             <!--ID-->
             <label for="Id"><br><br><br>ID:<br></label>
-            <input class="textbox" type="text" id="Id" name="Id" required placeholder="8-16 characters">
+            <input class="textbox" type="text" id="Id" name="Id" required placeholder="8-16 characters" minlength="8" maxlength="16">
 
             <!--Password-->
             <label for="Password"><br><br><br>Password:<br></label>
