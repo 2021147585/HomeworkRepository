@@ -1,0 +1,194 @@
+@import url(//db.onlinewebfonts.com/c/0a6ee448d1bd65c56f6cf256a7c6f20a?family=Bahnschrift);
+
+* {
+    position: relative;
+}
+
+body {
+    background-color: #EEEDDE;
+}
+
+p, 
+div,
+label,
+input {
+    text-align: center;
+    font-family: 'Bahnschrift', sans-serif;
+    color: #141E27;
+}
+
+label {
+    display: block;
+    font-size: 23px;
+    padding-top: 1px;
+}
+
+.textbox {
+    border: 0;
+    border-bottom: 2px solid gray;
+    background: transparent;
+    width: 400px;
+    font-size: 25px;
+    text-align: center;
+}
+
+::placeholder{
+    opacity: 0.3;
+}
+
+.buttons{
+    padding: 10px 40px
+}
+
+.hlink{
+    font-size: 50%;
+    font-weight: bolder;
+    color: #203239;
+    top: -5px;
+}
+
+/*
+MAIN PAGE STUFF
+*/
+
+.itemBox {
+    width: 1020px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 150px;
+    opacity: 0;
+    animation: fadein 1s ease-in-out 2s forwards;
+}
+
+.itemDescHeadL {
+    font-size: 30px;
+    text-align: left;
+    left: 100px;
+    width: 520px;
+}
+
+/* Left-Aligned division */
+
+.itemDescBodyL {
+    font-size: 20px;
+    text-align: left;
+    left: 100px;
+    width: 520px;
+}
+
+.itemImgL {
+    display: block;
+    margin-left: auto;
+    left: -50px;
+    top: -150px;
+    transform: rotate(0deg);
+    transition: transform 2s;
+}
+
+/*rotate*/
+.itemImgL:hover {
+    transform: rotate(360deg);
+}
+
+/* Left-Aligned division */
+
+.itemDescHeadR {
+    font-size: 30px;
+    text-align: right;
+    right: 100px;
+    width: 1020px;
+}
+
+.itemDescBodyR {
+    font-size: 20px;
+    text-align: right;
+    right: 100px;
+    width: 1020px;
+}
+
+.itemImgR {
+    transform: scale(0.5);
+    transition: transform 2s;
+}
+
+/*resize*/
+.itemImgR:hover {
+    transform: scale(1);
+}
+
+#header {
+    margin: 0 auto;
+    margin-top: 150px;
+    width: 1020px;
+    border: 0;
+    border-left: 1rem solid;
+}
+
+#headerText { 
+    font-size: 50px;
+    width: 1020px;
+    text-align: left;
+    animation-name: rtol;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#img_container {
+    display: block;
+    margin-right: auto;
+    right: -50px;
+    top: -150px;
+    width: 400px;
+    height: 300px;
+    border: solid grey;
+    border-width: 1px;
+}
+
+@keyframes rtol {
+    from {opacity: 0; right: -1000px;}
+    to {opacity: 1; right: -20px;}
+}
+
+
+@keyframes fadein {
+    from {opacity: 0%}
+    to {opacity: 100%}
+}
+
+/*
+MAIN PAGE STUFF END
+*/
+
+#head { 
+    padding-top: 100px;
+    padding-bottom: 5px;
+}
+
+#title{
+    font-size: 80px;
+}
+
+#subtext{
+    font-size: 30px;
+}
+
+#maindiv{
+    border-radius: 30px;
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(224, 221, 170, 0.2)
+}
+
+#submit { 
+    font-size: 23px;
+    margin-top: 50px;
+    color: rgb(0, 7, 141);
+    border: 5px;
+}
+
+#reset {
+    font-size: 23px;
+    color: rgb(117, 0, 0);
+    border: 5px
+}
