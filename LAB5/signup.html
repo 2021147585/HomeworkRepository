@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div>
+        <p id="title">Explore everything.<br></p>
+        <p id="subtext">
+            <a href = "login.html" style="text-decoration:none;" class = "hlink">Login</a> | Sign Up | 
+            <a href = "index.html" style="text-decoration:none;" class = "hlink">Back to Main Page</a>
+        </p>
+    </div>
+    <hr style="width:50%;border-width:1px;color:gray;background-color:gray;">
+
+    <div id="maindiv">
+        <form method="get">
+            <!--Email-->
+            <label for="Email"><br><br>Email Address:<br></label>
+            <input class="textbox" type="text" id="Email" name="Email" placeholder="someone@site.com" required autofocus pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+            
+            <!--Tel. number-->
+            <label for="Tel"><br><br><br>Tel:<br></label>
+            <input class="textbox" type="text" id="Tel" name="Tel" placeholder="010-1234-5678" required pattern="^01(?:0|1|[6-9])[.-]?(\\d{3}|\\d{4})[.-]?(\\d{4})$">
+        
+            <!--ID-->
+            <label for="Id"><br><br><br>ID:<br></label>
+            <input class="textbox" type="text" id="Id" name="Id" required placeholder="8-16 characters" minlength="8" maxlength="16">
+
+            <!--Password-->
+            <label for="Password"><br><br><br>Password:<br></label>
+            <input class="textbox" type="password" id="Password" name="Password" required placeholder="********">
+
+            <!--Age-->
+            <label for="Age"><br><br><br>Age:<br></label>
+            <input class="textbox" type="number" id="Age" name="Age" required step="2" min="1" max="120" placeholder="Only odd age can register!">
+        
+            <!--submit-->
+            <br>
+            <input id="submit" type="submit" value="Register">
+        
+            <!--reset-->
+            <input id="reset" type="reset" value="Reset">
+        </form>
+    </div> 
+</body>
+</html>

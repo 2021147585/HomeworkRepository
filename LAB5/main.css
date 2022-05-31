@@ -1,0 +1,291 @@
+@import url(//db.onlinewebfonts.com/c/0a6ee448d1bd65c56f6cf256a7c6f20a?family=Bahnschrift);
+
+* {
+    position: relative;
+}
+
+body {
+    background-color: #EEEDDE;
+}
+
+p, 
+div,
+label,
+input {
+    text-align: center;
+    font-family: 'Bahnschrift', sans-serif;
+    color: #141E27;
+}
+
+label {
+    display: block;
+    font-size: 23px;
+    padding-top: 1px;
+}
+
+.textbox {
+    border: 0;
+    border-bottom: 2px solid gray;
+    background: transparent;
+    width: 400px;
+    font-size: 25px;
+    text-align: center;
+}
+
+::placeholder{
+    opacity: 0.3;
+}
+
+.buttons{
+    padding: 10px 40px
+}
+
+.hlink{
+    font-size: 50%;
+    font-weight: bolder;
+    color: #203239;
+    top: -5px;
+}
+
+.navigation-container {
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+}
+
+.navi-element {
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+#header {
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    width: 1020px;
+    border: 0;
+    border-left: 1rem solid;
+}
+
+.headerText { 
+    font-size: 50px;
+    width: 1020px;
+    text-align: left;
+    animation-name: rtol;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+/*
+MAIN PAGE STUFF
+*/
+
+
+#button-container {
+    width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    animation: fadein 2s ease-in-out 2s forwards;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 50px 30px;
+}
+
+#categories {
+    border: 0;
+    border-bottom: 2px solid gray;
+    background: transparent;
+}
+
+#search {
+    border: 0;
+    border-bottom: 2px solid gray;
+    background: transparent;
+}
+
+#search-button {
+    top: 65px;
+    height: 20px;
+    width: 125px;
+    border: 0;
+    background-color: #203239;
+    color: white;
+}
+
+.itemBox-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    max-width: 1020px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadein 1s ease-in-out 2s forwards;
+}
+
+.itemBox {
+    flex: 25%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: left;
+    width: 255px;
+    margin: 0 auto;
+    margin-top : 10px;
+    margin-bottom: 250px;
+}
+
+.img-container {
+    display: block;
+    text-align: left;
+    width: 255px;
+    height: 191px;
+}
+
+.itemDescHead {
+    border: 0;
+    border-bottom: 0.5rem solid;
+    margin: 0;
+    font-size: 20px;
+    text-align: left;
+    width: 200px;
+    bottom: 20px
+}
+
+.itemDescBody {
+    font-size: 13px;
+    text-align: left;
+    width: 255px
+}
+
+.productImg {
+    width: 210px;
+    height: auto;
+}
+
+
+
+.itemImgL {
+    transform: rotate(0deg);
+    transition: transform 2s;
+}
+
+/*rotate*/
+.itemImgL:hover {
+    transform: rotate(360deg);
+}
+
+/* Right-Aligned division */
+
+.itemImgR {
+    transform: scale(0.5);
+    transition: transform 2s;
+}
+
+/*resize*/
+.itemImgR:hover {
+    transform: scale(1);
+}
+
+/*media queries*/
+@media all and (max-width: 480px){
+	.headerText { 
+    	font-size: 30px;
+    }
+	.navigation-container {
+    	font-size: 20px;
+    }
+    .itemBox {
+    	flex-direction: row;
+        max-height: 165px;
+    }
+    .itemDescHead {
+    	max-height: 110px;
+    	border: 0;
+        border-right: 0.5rem solid;
+        left: 5px;
+        font-size: 18px;
+    }
+}
+
+@media all and (min-width: 481px) and (max-width: 800px){
+	.headerText { 
+    	font-size: 40px;
+    }
+	.navigation-container {
+    	font-size: 25px;
+    }
+    .itemBox {
+        flex: 50%;
+    	flex-direction: row;
+        max-height: 165px;
+    }
+    .itemDescHead {
+    	max-height: 110px;
+    	border: 0;
+        border-left: 0.5rem solid;
+        font-size: 20px;
+    }
+    .img-container {
+    	left: -5px;
+    }
+}
+
+@media all and (min-width: 801px){
+    .header {
+        font-size: 50px;
+        max-height: 600px;
+    }
+}
+
+@keyframes rtol {
+    from {opacity: 0; right: -1000px;}
+    to {opacity: 1; right: -20px;}
+}
+
+
+@keyframes fadein {
+    from {opacity: 0%}
+    to {opacity: 100%}
+}
+
+/*
+MAIN PAGE STUFF END
+*/
+
+#head { 
+    padding-top: 100px;
+    padding-bottom: 5px;
+}
+
+#title{
+    font-size: 80px;
+}
+
+#subtext{
+    font-size: 30px;
+}
+
+#maindiv{
+    border-radius: 30px;
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(224, 221, 170, 0.2)
+}
+
+#submit { 
+    font-size: 23px;
+    margin-top: 50px;
+    color: rgb(0, 7, 141);
+    border: 5px;
+}
+
+#reset {
+    font-size: 23px;
+    color: rgb(117, 0, 0);
+    border: 5px
+}

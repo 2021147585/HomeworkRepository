@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<script>
+    let searching = false;
+    let cur = 13;
+    getProduct(1, 12);
+
+    function getProduct(st, end, ctg="", key=""){
+        fetch("product.json")
+        .then(res => res.json())
+        .then(data =>{
+            for(const p of data.products){
+                if(st <= p.idx && p.idx <= end){
+                    
+                    if(p.name.toLowerCase().includes(key.toLowerCase()) && (ctg == "" || ctg == p.category)){
+
+                        // itembox
+                        let item = document.createElement('div');
+                        item.classList.add("itemBox");
+
+                        // img container
+                        let imgContainer = document.createElement("div");
+                        imgContainer.classList.add("img-container");
+                        imgContainer.setAttribute("align", "left");
+
+                        // img
+                        let image = document.createElement("img");
+                        image.classList.add("productImg");
+                        image.setAttribute("src", "images/" + p.img);
+                        image.setAttribute("alt", p.name);
+                        image.addEventListener("click", () => {
+                            let descLow = document.getElementById(p.idx);
+                            if(descLow == null){
+                                descLow = document.createElement("p");
+                                descLow.setAttribute("id", p.idx);
+                                descLow.classList.add("itemDescBody");
+                                descLow.innerHTML = "<br><b>" + p.price + "</b><br>" + p.desc;
+                                item.append(descLow);
+                            } else {
+                                descLow.remove()
+                            }
+                        });
+                        imgContainer.append(image);
+
+                        // Description
+                        let desc = document.createElement("p");
+                        desc.classList.add("itemDescHead");
+                        desc.innerHTML = "<b><br>" + p.name + "</b>";
+
+                        item.append(desc);
+                        item.append(imgContainer);
+                        document.getElementById("itembody").append (item);
+                    }
+                }
+            }
+
+        })
+    }
+
+    window.onscroll = () => {
+        if(window.innerHeight + window.scrollY >= document.body.offsetHeight && cur <= 32 && !searching){
+            getProduct(cur, cur+7);
+            cur += 8;
+        }
+    }
+
+    function getDesc(id){
+        console.log(id);
+    }
+
+    function filter(){
+        document.getElementById("itembody").innerHTML = "";
+        let key = document.getElementById("search").value;
+        let ctg = document.getElementById("categories").value;
+        // console.log(typeof(key), typeof(ctg));
+        getProduct(1, 32, ctg, key);
+        if(key==""&&ctg==""){
+            searching = false;
+        } else {
+            searching == true;
+        }
+    }
+
+</script>
+
+<body id="mainPage">
+    <div class="navigation-container">
+        <div class="navi-element"><a href = "login.html" style="text-decoration:none;" class = "hlink">Login</a> </div> |  
+        <div class="navi-element"><a href = "signup.html" style="text-decoration:none;" class = "hlink">Sign up</a> </div> | 
+        <div class="navi-element">Main Page</div>
+    </div>
+
+    <div id="header">
+        <div class="headerText"> <b>Here's Everything<br> that you're looking for. </b></div>
+    </div>
+
+    <div id="button-container">
+        <div id="selection-container">
+            <label for="categories"> Search by Categories: </label>
+            <select name="categories" id="categories">
+                <option value=""> Select </option>
+                <option value="chair"> Chairs </option>
+                <option value="bed"> Beds </option>
+                <option value="lighting"> Lightings </option>
+                <option value="storage"> Storage </option>
+                <option value="misc"> Miscellaneous </option>
+            </select>
+        </div>
+        <div id="search-button-container">
+            <button id="search-button" onclick="filter()"> Search </button>
+        </div>
+        <div id="search-container">
+            <label for="searchbox"> Search by Keyword: </label>
+            <input type="text" id="search" name="search" placeholder="Keyword">
+        </div>
+    </div>
+
+    <div class="itemBox-container" id="itembody">
+    </div>
+</body>
+</html>
